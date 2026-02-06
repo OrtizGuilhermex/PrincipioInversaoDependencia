@@ -1,7 +1,13 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+
 public class Main {
     public static void main(String[] args) {
+        NotificationService emailNotification = new ServicoEmail();
+        RecuperadorDeSenha recuperadorDeSenha = new RecuperadorDeSenha(emailNotification);
+        recuperadorDeSenha.recuperar("");
+
+        NotificationService SMSNotification = new ServicoSMS();
+        recuperadorDeSenha = new RecuperadorDeSenha(SMSNotification);
+        recuperadorDeSenha.recuperar("");
 
     }
 }
